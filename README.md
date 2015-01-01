@@ -1,7 +1,7 @@
 docker-weechat-otr
 ==================
 
-Run the [weechat](https://weechat.org) IRC client with [Off-the-Record](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) (OTR) encryption.
+Run the [WeeChat](https://weechat.org) IRC client with [Off-the-Record](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) (OTR) encryption.
 
 Build and Run
 -------------
@@ -25,12 +25,12 @@ Build and Run
    docker run -t -i fstab/weechat-otr:v1
    ```
 
-The container will start up with the [weechat](https://weechat.org) client.
+The container will start up with the [WeeChat](https://weechat.org) client.
 
 Use OTR Encryption
 ------------------
 
-Within [weechat](https://weechat.org), you can use [OTR](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) encryption as follows:
+Within [WeeChat](https://weechat.org), you can use [OTR](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) encryption as follows:
 
 1. Set the nick name, connect to freenode, and start a private conversation without encryption:
  
