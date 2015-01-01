@@ -4,6 +4,15 @@ MAINTAINER Fabian Stäber, fabian@fstab.de
 RUN apt-get update && \
     apt-get upgrade -y
 
+# The weechat otr plugin works with the following versions:
+#
+#  - weechat 1.0.1
+#  - python-potr 1.0.0
+#  - weechat-otr 1.3.0
+#
+# These are the versions provided with ubuntu 14.10.
+# If you change the base image to ubuntu 14.04, it will not work.
+
 RUN apt-get -y install \
     python-potr \
     weechat \

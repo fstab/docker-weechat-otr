@@ -7,7 +7,7 @@ Build and Run
 -------------
 
 1. Make sure [Docker](https://www.docker.com) is installed.
-3. Check out _docker-weechat-otr_ from [GitHub](https://github.com/fstab/docker-weechat-otr)
+3. Clone _docker-weechat-otr_ from [GitHub](https://github.com/fstab/docker-weechat-otr)
 
    ```bash
    git clone https://github.com/fstab/docker-weechat-otr.git
@@ -45,9 +45,15 @@ Within [weechat](https://weechat.org), you can use [OTR](http://en.wikipedia.org
    ```
    /otr start
    ```
+   It may take a few seconds until the encrypted conversation is established.
 
 3. For more info, view the OTR help in the server buffer
 
    ```
    /help otr
    ```
+
+Why OTR?
+--------
+
+Spiegel Online has an [interesting article](http://spon.de/aeo0j) on how intelligence agencies crack encrypted Internet communication. As the linked documents from the Snowden archives suggest, the NSA seems to have major problems with decrypting OTR messages.
