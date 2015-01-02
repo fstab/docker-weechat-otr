@@ -41,5 +41,7 @@ RUN \
     echo /set weechat.bar.status.items "\"[time],[buffer_last_number],[buffer_plugin],[otr],buffer_number+:+buffer_name+(buffer_modes)+{buffer_nicklist_count}+buffer_zoom+buffer_filter,[lag],[hotlist],completion,scroll\"" >> config.txt && \
     echo
 
-#ENTRYPOINT weechat -r "`cat config.txt | tr \"\\n\" \"\;\"`"
-ENTRYPOINT weechat
+# Use config.txt only if no weechat configuration exists.
+# If there is already a configuration in /home/otr/.weechat, ignore config.txt
+
+ENTRYPOINT bash -c 'if [ -f "/home/otr/.weechat/irc.conf" ] ; then weechat ; else weechat -r "`cat config.txt | tr \"\\n\" \"\;\"`" ; fi'
