@@ -54,20 +54,17 @@ Storing Configuration Permanently
 
 As [WeeChat](https://weechat.org) runs in the [Docker](http://docker.io) container, all configuration changes will be gone when [WeeChat](https://weechat.org) exits. That means, you need to configure your nick each time you start the container
 
-    ```
     /set irc.server.freenode.nicks alice
-    ```
+
 and [WeeChat](https://weechat.org) will generate a new [OTR](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) key and fingerprint each time it starts.
 
 Moreover, all conversation logs will be gone once [WeeChat](https://weechat.org) quits.
 
 If you start using [WeeChat](https://weechat.org) regularly, you might want to store data permanently. In order to do that, you need to create a directory on your host computer and map that directory to `/home/otr/.weechat` in the [Docker](http://docker.io) container:
 
-    ```
     mkdir ~/.weechat
     chmod 700 ~/.weechat
     docker run -v ~/.weechat:/home/otr/.weechat -t -i fstab/weechat-otr:v1
-    ```
 
 That way, all [WeeChat](https://weechat.org) data is stored in `~/.weechat` on the host system.
 
