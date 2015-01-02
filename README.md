@@ -52,21 +52,26 @@ For more info, run `/help otr` in the server buffer to view the OTR help.
 Storing Configuration Permanently
 ---------------------------------
 
-As [WeeChat](https://weechat.org) runs in the [Docker](http://docker.io) container, all configuration changes will be gone when [WeeChat](https://weechat.org) exits. That means, you need to configure your nick each time you start the container
+The instructions above show an easy way to try out [WeeChat](https://weechat.org) and [OTR](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) encryption.
 
+However, if you use [WeeChat](https://weechat.org) regularly, you may soon find it annoying that all data in the [Docker](http://docker.io) container is lost as soon as [WeeChat](https://weechat.org) exits:
+
+
+  * You need to configure your nick each time you start the container
+
+    ```
     /set irc.server.freenode.nicks alice
+    ```
+  * [WeeChat](https://weechat.org) generates new [OTR](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) keys and fingerprints each time it starts.
+  * All conversation logs are gone once [WeeChat](https://weechat.org) quits.
 
-and [WeeChat](https://weechat.org) will generate a new [OTR](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) key and fingerprint each time it starts.
-
-Moreover, all conversation logs will be gone once [WeeChat](https://weechat.org) quits.
-
-If you start using [WeeChat](https://weechat.org) regularly, you might want to store data permanently. In order to do that, you need to create a directory on your host computer and map that directory to `/home/otr/.weechat` in the [Docker](http://docker.io) container:
+If you start using [WeeChat](https://weechat.org) regularly, you want to store data permanently. In order to do that, you need to create a directory on your host computer and map that directory to `/home/otr/.weechat` in the [Docker](http://docker.io) container:
 
     mkdir ~/.weechat
     chmod 700 ~/.weechat
     docker run -v ~/.weechat:/home/otr/.weechat -t -i fstab/weechat-otr:v1
 
-That way, all [WeeChat](https://weechat.org) data is stored in `~/.weechat` on the host system.
+That way, all [WeeChat](https://weechat.org) data is stored in `~/.weechat` on the host system, and can be re-used.
 
 Why OTR?
 --------
