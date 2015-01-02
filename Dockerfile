@@ -41,4 +41,5 @@ RUN \
     echo /set weechat.bar.status.items "\"[time],[buffer_last_number],[buffer_plugin],[otr],buffer_number+:+buffer_name+(buffer_modes)+{buffer_nicklist_count}+buffer_zoom+buffer_filter,[lag],[hotlist],completion,scroll\"" >> config.txt && \
     echo
 
-ENTRYPOINT weechat -r "`cat config.txt | tr \"\\n\" \"\;\"`"
+#ENTRYPOINT weechat -r "`cat config.txt | tr \"\\n\" \"\;\"`"
+ENTRYPOINT weechat

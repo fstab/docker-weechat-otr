@@ -47,11 +47,7 @@ Within [WeeChat](https://weechat.org), you can use [OTR](http://en.wikipedia.org
    ```
    It may take a few seconds until the encrypted conversation is established.
 
-3. For more info, view the OTR help in the server buffer
-
-   ```
-   /help otr
-   ```
+For more info, run `/help otr` in the server buffer to view the OTR help.
 
 Why OTR?
 --------
