@@ -3,8 +3,17 @@ docker-weechat-otr
 
 Run the [WeeChat](https://weechat.org) IRC client with [Off-the-Record](http://en.wikipedia.org/wiki/Off-the-Record_Messaging) (OTR) encryption.
 
-Build and Run
--------------
+Run from Docker Hub
+-------------------
+
+A pre-built image is available on [Docker Hub](https://registry.hub.docker.com/u/fstab/weechat-otr) and can be run as follows:
+
+    docker run -t -i fstab/weechat-otr
+
+The container will start up with the [WeeChat](https://weechat.org) client.
+
+Build from Source
+-----------------
 
 1. Make sure [Docker](https://www.docker.com) is installed.
 3. Clone _docker-weechat-otr_ from [GitHub](https://github.com/fstab/docker-weechat-otr)
@@ -23,9 +32,6 @@ Build and Run
 
    ```bash
    docker run -t -i fstab/weechat-otr:v1
-   ```
-
-The container will start up with the [WeeChat](https://weechat.org) client.
 
 Use OTR Encryption
 ------------------
