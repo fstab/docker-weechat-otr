@@ -25,13 +25,13 @@ Build from Source
 
    ```bash
    cd docker-weechat-otr
-   docker build -t="fstab/weechat-otr:v1" .
+   docker build -t="fstab/weechat-otr" .
    ```
 
 5. Run a docker container with that image
 
    ```bash
-   docker run -t -i fstab/weechat-otr:v1
+   docker run -t -i fstab/weechat-otr
    ```
 
 Use OTR Encryption
@@ -76,7 +76,7 @@ If you start using [WeeChat](https://weechat.org) regularly, you want to store d
 
     mkdir ~/.weechat
     chmod 700 ~/.weechat
-    docker run -v ~/.weechat:/home/otr/.weechat -t -i fstab/weechat-otr:v1
+    docker run -v ~/.weechat:/home/otr/.weechat -t -i fstab/weechat-otr
 
 That way, all [WeeChat](https://weechat.org) data is stored in `~/.weechat` on the host system, and can be re-used in the next docker run.
 
