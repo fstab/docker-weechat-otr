@@ -32,6 +32,7 @@ Build from Source
 
    ```bash
    docker run -t -i fstab/weechat-otr:v1
+   ```
 
 Use OTR Encryption
 ------------------
