@@ -86,16 +86,24 @@ When the _weechat-otr_ docker container is run without the `~/.weechat` volume, 
 /set weechat.bar.status.items "[time],[buffer_last_number],[buffer_plugin],[otr],buffer_number+:+buffer_name+(buffer_modes)+{buffer_nicklist_count}+buffer_zoom+buffer_filter,[lag],[hotlist],completion,scroll"
 ```
 
-Then, of course, you need to set your nick:
+Then, of course, you need to set your nick, username, realname:
 
 ```
 /set irc.server.freenode.nicks alice
+/set irc.server.freenode.username alice
+/set irc.server.freenode.realname "Alice Springs"
 ```
 
-To run a command after connection to server, for example to authenticate with nickserv
+To run a command after connection to server, for example to authenticate with nickserv:
 
 ```
 /set irc.server.freenode.command "/msg nickserv identify xxxxxxx"
+```
+
+To get rid of irrelevant join/quit messages:
+
+```
+/filter add irc_smart * irc_smart_filter *
 ```
 
 Why OTR?
