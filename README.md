@@ -82,7 +82,7 @@ When the _weechat-otr_ docker container is run without the `~/.weechat` volume, 
 /set irc.server.freenode.addresses "chat.freenode.net/7000"
 /set irc.server.freenode.ssl on
 /set irc.server.freenode.ssl_dhkey_size 1024
-/python load /usr/share/weechat/python/otr.py
+/script install otr.py
 /set weechat.bar.status.items "[time],[buffer_last_number],[buffer_plugin],[otr],buffer_number+:+buffer_name+(buffer_modes)+{buffer_nicklist_count}+buffer_zoom+buffer_filter,[lag],[hotlist],completion,scroll"
 ```
 
