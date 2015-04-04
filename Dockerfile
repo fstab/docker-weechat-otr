@@ -10,6 +10,10 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+# Set the timezone (change this to your local timezone)
+RUN echo "Europe/Berlin" | tee /etc/timezone
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+
 # The weechat otr plugin works with the following versions:
 #
 #  - weechat 1.0.1
