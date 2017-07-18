@@ -6,6 +6,9 @@ ENV LAST_UPDATE=2017-07-18
 RUN apt-get update && \
     apt-get upgrade -y
 
+# Add locale and tzdata back, fix https://github.com/docker-library/official-images/issues/2863
+RUN apt-get install --yes tzdata locales
+
 # Set the timezone
 RUN echo "Europe/Berlin" | tee /etc/timezone && \
     ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime && \
